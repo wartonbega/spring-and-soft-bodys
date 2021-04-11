@@ -35,28 +35,17 @@ class Spring():
         self.B.F += Fb  
         
         
-Points = {'1' : MassPoint(), '2': MassPoint(), '3': MassPoint()}
+Points = {'1' : MassPoint(), '2': MassPoint()}
 Points['2'].x = 50
 Points['2'].m = 5
-Points['3'].x = 70
 
 spring = Spring()
-spring2 = Spring()
-spring2.A = Points['2']
-spring2.B = Points['3']
-spring2.L0 = 50
-
-#spring3 = Spring()
-#spring3.A = Points['1']
-#spring3.B = Points['3']
 
 window = tk.Tk()
 window.config(bg = '#192332')
 def chute():
     can.delete('all')
     spring.HooksLaw()
-#    spring2.HooksLaw()
-#    spring3.HooksLaw()
     for point in range(1, 3):
         Points[str(point)].Update(0.1)
         x = Points[str(point)].x
